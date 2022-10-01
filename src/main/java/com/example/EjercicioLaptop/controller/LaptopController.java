@@ -2,6 +2,7 @@ package com.example.EjercicioLaptop.controller;
 
 import com.example.EjercicioLaptop.entity.LaptopEntity;
 import com.example.EjercicioLaptop.repository.LaptopRepository;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,6 +13,9 @@ import java.util.Optional;
 @RestController
 public class LaptopController {
 
+    @Value("${app.message}")
+            String message;
+
     // atributo
     LaptopRepository repository;
 
@@ -20,6 +24,13 @@ public class LaptopController {
     public LaptopController(LaptopRepository repository) {
         this.repository = repository;
     }
+
+
+     @GetMapping ("/api/entorno")
+     public String entorno(){
+
+        return message;
+     }
 
 
     //Metodos
