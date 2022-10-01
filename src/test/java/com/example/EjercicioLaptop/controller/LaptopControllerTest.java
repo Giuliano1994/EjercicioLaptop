@@ -25,7 +25,7 @@ class LaptopControllerTest {
     private TestRestTemplate template;
     @Autowired
     private RestTemplateBuilder builder;
-    @LocalServerPort 
+    @LocalServerPort
     private int port;
 
     @BeforeEach
